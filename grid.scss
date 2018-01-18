@@ -1,0 +1,247 @@
+// variables for column percentage
+$one: 1/12*100%;
+$two: 2/12*100%;
+$three: 3/12*100%;
+$four: 4/12*100%;
+$five: 5/12*100%;
+$six: 6/12*100%;
+$seven: 7/12*100%;
+$eight: 8/12*100%;
+$nine: 9/12*100%;
+$ten: 10/12*100%;
+$eleven: 11/12*100%;
+$twelve: 12/12*100%;
+
+// flex mixin
+@mixin column($width) {
+    width: $width;
+    -webkit-flex: 0 0 $width;
+    -moz-flex: 0 0 $width;
+    -ms-flex: 0 0 $width;
+    flex: 0 0 $width;
+    max-width: $width; // IE 10, 11 fix
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    padding: 0.5em;
+}
+
+// row
+.row{
+    /*padding: 0.5em 0 0.5em 0;*/
+    margin: -0.5em;
+    display: flex;
+    flex-wrap: wrap; // wrap elements over lines
+    // flex-direction: row; // default value;
+}
+
+// older browsers: clear after row
+.row:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+// set padding for all column elements
+.col-s-1,
+.col-s-2,
+.col-s-3,
+.col-s-4,
+.col-s-5,
+.col-s-6,
+.col-s-7,
+.col-s-8,
+.col-s-9,
+.col-s-10,
+.col-s-11,
+.col-s-12,
+.col-m-1,
+.col-m-2,
+.col-m-3,
+.col-m-4,
+.col-m-5,
+.col-m-6,
+.col-m-7,
+.col-m-8,
+.col-m-9,
+.col-m-10,
+.col-m-11,
+.col-m-12,
+.col-l-1,
+.col-l-2,
+.col-l-3,
+.col-l-4,
+.col-l-5,
+.col-l-6,
+.col-l-7,
+.col-l-8,
+.col-l-9,
+.col-l-10,
+.col-l-11,
+.col-l-12{
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    width: 100%; // set initial width
+}
+
+.col-s-1,
+.col-s-2,
+.col-s-3,
+.col-s-4,
+.col-s-5,
+.col-s-6,
+.col-s-7,
+.col-s-8,
+.col-s-9,
+.col-s-10,
+.col-s-11,
+.col-s-12{
+    float: left;
+}
+
+.offset-s-1{  margin: 0 0 0 $one; }
+.offset-s-2{  margin: 0 0 0 $two; }
+.offset-s-3{  margin: 0 0 0 $three; }
+.offset-s-4{  margin: 0 0 0 $four; }
+.offset-s-5{  margin: 0 0 0 $five; }
+.offset-s-6{  margin: 0 0 0 $six; }
+.offset-s-7{  margin: 0 0 0 $seven; }
+.offset-s-8{  margin: 0 0 0 $eight; }
+.offset-s-9{  margin: 0 0 0 $nine; }
+.offset-s-10{ margin: 0 0 0 $ten; }
+.offset-s-11{ margin: 0 0 0 $eleven; }
+.offset-s-12{ margin: 0 0 0 $twelve; }
+
+.col-s-1{  @include column($one); }
+.col-s-2{  @include column($two); }
+.col-s-3{  @include column($three); }
+.col-s-4{  @include column($four); }
+.col-s-5{  @include column($five); }
+.col-s-6{  @include column($six); }
+.col-s-7{  @include column($seven); }
+.col-s-8{  @include column($eight); }
+.col-s-9{  @include column($nine); }
+.col-s-10{ @include column($ten); }
+.col-s-11{ @include column($eleven); }
+.col-s-12{ @include column($twelve); }
+
+// min width 700px - medium columns
+@media screen and (min-width: 700px){
+    // clear small offsets
+    .offset-s-1{  margin: 0; }
+    .offset-s-2{  margin: 0; }
+    .offset-s-3{  margin: 0; }
+    .offset-s-4{  margin: 0; }
+    .offset-s-5{  margin: 0; }
+    .offset-s-6{  margin: 0; }
+    .offset-s-7{  margin: 0; }
+    .offset-s-8{  margin: 0; }
+    .offset-s-9{  margin: 0; }
+    .offset-s-10{ margin: 0; }
+    .offset-s-11{ margin: 0; }
+    .offset-s-12{ margin: 0; }
+
+    .col-m-1,
+    .col-m-2,
+    .col-m-3,
+    .col-m-4,
+    .col-m-5,
+    .col-m-6,
+    .col-m-7,
+    .col-m-8,
+    .col-m-9,
+    .col-m-10,
+    .col-m-11,
+    .col-m-12{
+        float: left;
+    }
+    
+    .offset-m-1{  margin: 0 0 0 $one; }
+    .offset-m-2{  margin: 0 0 0 $two; }
+    .offset-m-3{  margin: 0 0 0 $three; }
+    .offset-m-4{  margin: 0 0 0 $four; }
+    .offset-m-5{  margin: 0 0 0 $five; }
+    .offset-m-6{  margin: 0 0 0 $six; }
+    .offset-m-7{  margin: 0 0 0 $seven; }
+    .offset-m-8{  margin: 0 0 0 $eight; }
+    .offset-m-9{  margin: 0 0 0 $nine; }
+    .offset-m-10{ margin: 0 0 0 $ten; }
+    .offset-m-11{ margin: 0 0 0 $eleven; }
+    .offset-m-12{ margin: 0 0 0 $twelve; }
+
+    .col-m-1{  @include column($one); }
+    .col-m-2{  @include column($two); }
+    .col-m-3{  @include column($three); }
+    .col-m-4{  @include column($four); }
+    .col-m-5{  @include column($five); }
+    .col-m-6{  @include column($six); }
+    .col-m-7{  @include column($seven); }
+    .col-m-8{  @include column($eight); }
+    .col-m-9{  @include column($nine); }
+    .col-m-10{ @include column($ten); }
+    .col-m-11{ @include column($eleven); }
+    .col-m-12{ @include column($twelve); }
+}
+
+// min width 1200px - large columns
+@media screen and (min-width: 1200px){
+    .container{ width: 1200px; margin: 0 auto; }
+    
+    // clear medium offsets
+    .offset-m-1{  margin: 0; }
+    .offset-m-2{  margin: 0; }
+    .offset-m-3{  margin: 0; }
+    .offset-m-4{  margin: 0; }
+    .offset-m-5{  margin: 0; }
+    .offset-m-6{  margin: 0; }
+    .offset-m-7{  margin: 0; }
+    .offset-m-8{  margin: 0; }
+    .offset-m-9{  margin: 0; }
+    .offset-m-10{ margin: 0; }
+    .offset-m-11{ margin: 0; }
+    .offset-m-12{ margin: 0; }
+    
+    .col-l-1,
+    .col-l-2,
+    .col-l-3,
+    .col-l-4,
+    .col-l-5,
+    .col-l-6,
+    .col-l-7,
+    .col-l-8,
+    .col-l-9,
+    .col-l-10,
+    .col-l-11,
+    .col-l-12{
+        float: left;
+    }
+    
+    .offset-l-1{  margin: 0 0 0 $one; }
+    .offset-l-2{  margin: 0 0 0 $two; }
+    .offset-l-3{  margin: 0 0 0 $three; }
+    .offset-l-4{  margin: 0 0 0 $four; }
+    .offset-l-5{  margin: 0 0 0 $five; }
+    .offset-l-6{  margin: 0 0 0 $six; }
+    .offset-l-7{  margin: 0 0 0 $seven; }
+    .offset-l-8{  margin: 0 0 0 $eight; }
+    .offset-l-9{  margin: 0 0 0 $nine; }
+    .offset-l-10{ margin: 0 0 0 $ten; }
+    .offset-l-11{ margin: 0 0 0 $eleven; }
+    .offset-l-12{ margin: 0 0 0 $twelve; }
+
+    .col-l-1{  @include column($one); }
+    .col-l-2{  @include column($two); }
+    .col-l-3{  @include column($three); }
+    .col-l-4{  @include column($four); }
+    .col-l-5{  @include column($five); }
+    .col-l-6{  @include column($six); }
+    .col-l-7{  @include column($seven); }
+    .col-l-8{  @include column($eight); }
+    .col-l-9{  @include column($nine); }
+    .col-l-10{ @include column($ten); }
+    .col-l-11{ @include column($eleven); }
+    .col-l-12{ @include column($twelve); }
+}
